@@ -42,13 +42,12 @@ contract GACToken is ERC20, Base {
     }
 
     function mint(address _to, uint _amount) external onlyAuth {
-        require(MAX_SUPPLY >= totalSupply(), "mint: MAX_SUPPLY >= totalSupply()");
         _mint(_to, _amount);
     }
 
     function _mint(address account, uint256 amount) internal override {
-        require(MAX_SUPPLY >= totalSupply(), "_mint: MAX_SUPPLY >= totalSupply()");
         super._mint(account, amount);
+        require(MAX_SUPPLY >= totalSupply(), "_mint: MAX_SUPPLY >= totalSupply()");
     }
 
 }

@@ -18,7 +18,6 @@ import "./IAdmin.sol";
 contract NFTAdmin is ERC721EnumerableUpgradeable, INFTAdmin, BaseUpgradeable {
     using AddressUpgradeable for address;
 
-    address public farm;
     address public adminAdmin;
     address public family;
 
